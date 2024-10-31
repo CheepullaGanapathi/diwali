@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .title{
+        .title {
             color: green;
         }
-        body{
-            background-image: url("diwali.jpg");
+
+        body {
+            background-image: url("index.jpg");
             background-repeat: no-repeat;
             background-size: 100vw 100vh;
         }
-        .form-field{
+
+        .form-field {
             margin: 10px;
         }
-        .form-field input,.form-btn{
+
+        .form-field input,
+        .form-btn {
             padding: 10px;
             width: 60%;
             margin: auto;
         }
-        .parent-container{
-            background-color:rgb(255, 255, 255);
+
+        .parent-container {
+            background-color: rgb(255, 255, 255);
             width: 30%;
             margin: auto;
             margin-top: 19%;
             text-align: center;
             border-radius: 15px;
             padding: 2%;
-
-
         }
-
+        .form-btn:hover{
+            background-color: gold;
+        }
     </style>
 </head>
-<body >
-    <form class="parent-container" action="login.html">
+
+<body>
+    <form class="parent-container" action="login.html" id="registrationform">
         <h1 class="title">REGISTRATION FORM</h1>
         <div class="form-field">
-            <input type="text" name="user_name" required placeholder="Username">
+            <input type="text" id="user_name" required placeholder="Username">
         </div>
-        <div  class="form-field">
-            <input type="mail" required name="mail_id"  placeholder="Mail Id">
+        <div class="form-field">
+            <input type="mail" required id="email" placeholder="Mail Id">
         </div>
-        <div  class="form-field">
-            <input type="number" name="phone_no."  required placeholder="phone.no">
-        </div  class="form-field">
-        <div class="form-field" >
-            <input type="password"  name="password"  required placeholder="password" >
+        <div class="form-field">
+            <input type="number" id="phone_number" required placeholder="phone.no">
+        </div class="form-field">
+        <div class="form-field">
+            <input type="password" id="password" required placeholder="password">
         </div>
-        <div  class="form-field">
-            <input type="password" name="password"  required placeholder="Confirm password">
+        <div class="form-field">
+            <input type="password" id="confirm_password" required placeholder="Confirm password">
         </div>
-        <div  class="form-field">
+        <div class="form-field">
             <button class="form-btn">Submit</button>
             <p>
                 Already have an account
@@ -61,5 +68,42 @@
             </p>
         </div>
     </form>
+    <script>
+        document.getElementById("registrationform").addEventListener("submit", function (e) {
+            e.preventDefault()
+            var email = document.getElementById("email").value
+            var phonenumber = document.getElementById("phone_number").value
+            var password = document.getElementById("password").value
+            var confirmpassword = document.getElementById("confirm_password").value
+
+            //password and confirm password
+            if(password!=confirmpassword)
+        {
+            alert("password is not matching with confirmpassword")
+            return
+        }
+        //creating current new user
+            var newUser={email,password,phonenumber}
+            console.log(newUser)
+        //checking whether that user exists or not
+            var users=JSON.parse(localStorage.getItem("users"))||[];
+        //using some method looking for the email
+            const emailExists=users.some(user=>user.email===email)
+        //if exists then it gives true else false
+        if(emailExists){
+            alert("already this email is exists try new email id")
+            return;
+        }
+        //storing the data in user variable
+        users.push(newUser)
+        //updating in loacalstorage also
+        localStorage.setItem("users",JSON.stringify (users))
+        alert("registration successful")
+        //redirecting to login page
+        window.location.href="login.html"
+        }
+        )
+    </script>
 </body>
+
 </html>

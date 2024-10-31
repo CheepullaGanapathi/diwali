@@ -6,16 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        .container {
+            background-image: url("");
+            background-size: cover;
+            background-color: brown;
+        }
+        .heading{
+            padding: 4px 6px;
+            border: 9px dashed ;
+            background-color: yellow;
+            color:blue;
+            border-radius: 80px;
+
+        }
+        .paragraph{
+            width:auto;
+            background-color: aqua;
+            margin-top: 1%;
+            padding: 7px 10px 7px 10px;
+            border-radius: 50px;
+        }
+        .images{
+            border: 3px dashed rgb(84, 189, 255);
+            background-color: black;
+            box-shadow: inset;
+        }
+        .h3{
+            color: darkorchid;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
 </head>
 
-<body>
-    <h1 align="center">HAPPY DIWALI</h1>
-    <BR>
-    <p></p>
+<body class="container">
+    <div class="heading">
+    <h1 align="center">HAPPY DIWALI...</h1>
+    <h3 align="center" class="h3">**May your Diwali be filled with beautiful moments, joyful gatherings, and sparkling memories**</h3>
+    </div>
+    <div class="paragraph">
+    <p><strong>
+
+            Diwali, also known as the Festival of Lights, is one of the most celebrated and significant festivals in
+            India
+            and around the world. This vibrant occasion symbolizes the triumph of light over darkness and good over
+            evil.
+            Celebrated by millions, Diwali usually falls in October or November, marking the end of the Hindu calendar
+            year.
+            The festival lasts for five days, with each day holding its unique significance and rituals. On the first
+            day,
+            Dhanteras, people buy gold and silver, believing it brings prosperity. The second day, Naraka Chaturdashi,
+            is
+            dedicated to the vanquishing of the demon Narakasura, symbolizing the victory of good. The third day is the
+            main
+            day of Diwali, when families illuminate their homes with oil lamps (diyas) and colorful rangoli designs,
+            inviting Goddess Lakshmi, the deity of wealth and prosperity. Fireworks light up the night sky, creating a
+            spectacular display that fills the air with joy and excitement. The fourth day, Govardhan Puja, honors Lord
+            Krishna and the act of lifting the Govardhan Hill to protect villagers from torrential rains. The final day,
+            Bhai Dooj, celebrates the bond between brothers and sisters, emphasizing love and protection. During Diwali,
+            homes are adorned with vibrant decorations, including strings of lights, flower garlands, and intricate
+            patterns
+            made from colored powders. Families come together to share sweets and savory treats, symbolizing the joy of
+            togetherness. It’s a time for forgiveness, renewal, and reflection, where people resolve to start anew and
+            foster positive relationships. In urban areas, the festive spirit comes alive with markets bustling with
+            activity, as vendors sell decorative items, sweets, and fireworks. The atmosphere is electric, filled with
+            laughter, music, and the sound of families gathering to celebrate. Communities often organize events,
+            cultural
+            programs, and fairs, showcasing traditional dances and performances that highlight the rich cultural
+            heritage of
+            India. While Diwali is deeply rooted in Hindu traditions, it is also embraced by Jains, Sikhs, and
+            Buddhists,
+            each adding their unique significance to the celebrations. In recent years, Diwali has gained global
+            recognition, celebrated by people of various backgrounds as a festival of joy, unity, and hope. In many
+            cities
+            worldwide, Diwali events include parades, fireworks, and cultural showcases, fostering understanding and
+            appreciation of diverse traditions. As we light our diyas and share our blessings, Diwali reminds us of the
+            importance of compassion, generosity, and community. The festival encourages us to dispel negativity and
+            nurture
+            positivity, both in our lives and the lives of others. This year, as we celebrate Diwali, let us embrace the
+            spirit of the festival, spreading love and kindness to those around us. It’s a time to connect, to cherish
+            relationships, and to illuminate our surroundings with joy and laughter. Whether it's through sharing meals,
+            exchanging gifts, or simply enjoying the beauty of the festivities, Diwali offers a unique opportunity to
+            reflect on our blessings and look forward to a brighter future. Let’s come together to celebrate this
+            magical
+            festival, filled with hope, harmony, and the promise of new beginnings.
+
+        </strong>
+    </p>
+    </div>
+    <p class="images" >
+    <img src="https://media.tenor.com/3ggcdo9zY9QAAAAM/happy-diwali-deepawali.gif" height="250px" width="250px"/>
+    <img src="https://media2.giphy.com/media/4iN87pIecMz18MsEuE/giphy.webp?cid=ecf05e47ixdq71krs8wvxqg2z9b8no6waafxhi8km10bw19s&ep=v1_gifs_search&rid=giphy.webp&ct=g" height="250px" width="250px"/>
+    <img src="https://media3.giphy.com/media/GgkkUiUQ89c8E/giphy.webp?cid=ecf05e4748e52qjbsvmn5p9pq9yvo7oenhst6duvb3oyk5iw&ep=v1_gifs_search&rid=giphy.webp&ct=g" height="250px" width="300px"/>
+    <img src="https://media.tenor.com/DmerJI0hXD0AAAAM/enjoying-with-diwali-crackers-diwali.gif" height="250px" width="250px"/>
+    <img src="https://media1.giphy.com/media/91EeRXIgcnRS3HtnhR/giphy.webp?cid=ecf05e47z6kbd811mwjwb18vh3j9pd7wx5juizv3tbfw27vr&ep=v1_gifs_search&rid=giphy.webp&ct=g" height="250px" width="363px"/>
+    </p>
+
 </body>
 <script>
     function launchConfetti() {
-        const duration = 7 * 1000; // 10 seconds
+        const duration = 8 * 1000; // 10 seconds
         const end = Date.now() + duration;
         const colors = ['#ffeb3b', '#8F00FF', '#ff5722', '#4caf50', '#FFFFFF', "#000000"];
         (function frame() {

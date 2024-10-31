@@ -8,37 +8,54 @@
     <style>
         body{
             background-image: url("logindiwali.jpg");
+            background-size: cover;
             background-repeat: no-repeat;
             background-size: 100vw 100vh;
         }
         .parent-login {
+            background-image: url("https://media.istockphoto.com/id/1246186429/video/rotating-indian-rangoli-for-diwali-festival-of-lights.jpg?s=640x640&k=20&c=7n29dT1eJsCjEg_9Pj9SNnlLFL_Y8_a5KhL3X1lSLjM=");
+            background-size: cover;
             background-color: blanchedalmond;
-            width: 25%;
-            margin-top: 8%;
-            border-radius: 10px;
+            width: 20%;
+            margin-top: 6%;
+            border-radius: 300px;
             padding: 10%;
-            height: 45%;
-            margin-left: 35px;
+            height: 40%;
+            margin-left: 120px;
+            border: 8px dashed green ;
 
         }
         .form-field {
             font-size: 1.4rem;
             font-weight: bold;
             width: 10px;
-            height: 40%;
+            height: 10%;
+            margin: auto;
+            padding: 10px 10px 40px 40px;
         }
+
         .form-login{
             margin: 10px;
             padding: 10px;
             size: 100px;
+            align-items: center;
+            justify-content: center;
         }
         .form-login input{
-            padding: 5px;
             width: 100%;
-            margin: 10px 0px 10px 0px;
             margin: auto;
+            padding: 5% 10% 5% 5%;
 
         }
+        .form-btn{
+            padding: 8% 29% 5% 30%;
+            margin: auto;
+            
+        }
+.form-btn:hover{
+    background-color: orchid;
+}
+
         @media (max-width:430px){
             .container{
                 flex-direction: column;
@@ -49,22 +66,47 @@
             }
         }
     </style>
+
 </head>
 
 <body>
     <div class="container">
-        <form class="parent-login" action="diwali.html">
+        <form class="parent-login" action="diwali.html" id="loginform">
             <div class="form-login">
-                <label class="form-field">Username :<input type="text" placeholder="Username" required></label>
+                <label class="form-field">Email :<input type="text" id="email" placeholder="Email id" required></label>
             </div>
             <div class="form-login">
-                <label class="form-field"> password : <br><input type="password" placeholder="password" required></label>
+                <label class="form-field">Password :<br><input type="password" id="password" placeholder="Password" required></label>
             </div>
             <div class="form-login">
                 <label class="form-field"><button class="form-btn">LOGIN</button></label>
             </div>
         </form>
     </div>
+    <script>
+        document.getElementById("loginform").addEventListener("submit",function (e){
+            e.preventDefault()
+            var email=document.getElementById("email").value
+            var password=document.getElementById("password").value
+
+            if(password!=password)
+        {
+            alert("password is not match")
+            return
+        }
+        var users=JSON.parse(localStorage.getItem("users"))
+        var validUser=users.find(user=>user.email===email && user.password===password)
+        if(validUser) {
+            localStorage.setItem("newUser",email)
+        }
+        else{
+            alert("not registered")
+            return
+        }
+        alert("login successful")
+        window.location.href="diwali.html" 
+        })
+    </script>
 </body>
 
 </html>
